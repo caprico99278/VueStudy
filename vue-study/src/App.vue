@@ -1,6 +1,15 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
+
+import { ref } from 'vue'
+const posts = ref([
+  { id: 1, msg: 'My journey with Vue' },
+  { id: 2, msg: 'Blogging with Vue' },
+  { id: 3, msg: 'Why Vue is so fun' }
+])
+const postFontSize = ref(1)
+
 </script>
 
 <template>
@@ -8,7 +17,14 @@ import HelloWorld from './components/HelloWorld.vue'
     <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
 
     <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+      <div :style="{ fontSize: postFontSize + 'em' }">
+        <HelloWorld
+          v-for="post in posts"
+          :key="post.id"
+          :msg="post.msg"
+          @enlarge-text="postFontSize += 0.1"
+        ></HelloWorld>
+      </div>
 
       <nav>
         <RouterLink to="/">Home</RouterLink>
