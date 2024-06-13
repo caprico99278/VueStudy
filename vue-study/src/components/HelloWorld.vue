@@ -8,7 +8,7 @@ defineEmits(['enlarge-text'])
 <template>
   <div class="greetings">
     <h4 class="green">{{ msg }}</h4>
-    <button @click="$emit('enlarge-text')">Enlarge text</button>
+    <button @click="$emit('enlarge-text')">テキストが大きくなるボタン</button>
   </div>
 </template>
 

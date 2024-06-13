@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
-
+import AlertBox from './components/AlertBox.vue'
 import { ref } from 'vue'
 const posts = ref([
   { id: 1, msg: 'My journey with Vue' },
@@ -25,10 +25,15 @@ const postFontSize = ref(1)
           @enlarge-text="postFontSize += 0.1"
         ></HelloWorld>
       </div>
-
+      <nav>
+        <AlertBox>
+          何らかのエラーが発生しました。
+        </AlertBox>
+      </nav>
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
+        <RouterLink to="/tab-demo">TabDemo</RouterLink>
       </nav>
     </div>
   </header>
