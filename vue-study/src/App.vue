@@ -24,6 +24,8 @@ const postFontSize = ref(1)
           :msg="post.msg"
           @enlarge-text="postFontSize += 0.1"
         ></HelloWorld>
+        <br>
+        <GrobalParts/>
       </div>
       <nav>
         <AlertBox>

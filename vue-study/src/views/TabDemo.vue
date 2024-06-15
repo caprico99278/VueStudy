@@ -25,6 +25,7 @@ const tabs = {
     </button>
 	  <component :is="tabs[currentTab as keyof typeof tabs]" class="tab"></component>
   </div>
+
 </template>
 
 <style>
